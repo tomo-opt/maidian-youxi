@@ -1,0 +1,17 @@
+{
+  "name": "hookplay-ai-interactive-marketing",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "npx vercel@59.23.2 dev",
+    "check": "node tools/check.mjs"
+  },
+  "dependencies": {
+    "ai": "7.0.107",
+    "zod": "^4.1.8"
+  }
+}
