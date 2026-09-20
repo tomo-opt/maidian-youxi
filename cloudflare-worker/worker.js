@@ -190,7 +190,7 @@ ${brief}
   const result = await env.AI.run(MODELS.code, {
     messages: [{ role: 'user', content: prompt }],
     max_tokens: 10000,
-    temperature: 0.62,
+    temperature: 0.42,
     repetition_penalty: 1.05
   });
   let html = protectGeneratedHtml(modelText(result))
