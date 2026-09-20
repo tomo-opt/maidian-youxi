@@ -16,7 +16,11 @@
 
 ## 立即体验
 
-双击 `dist/index.html` 可查看前端；部署后依次体验“导入产品 → AI真实分析 → 确认卖点 → 选择玩法 → 实时生图与生成HTML → 沙箱试玩/下载”。当前本地页面没有配置云端身份，需完成 Vercel 部署后才能实际调用模型。
+- Vercel 完整版：https://maidian-youxi.vercel.app
+- GitHub 仓库：https://github.com/tomo-opt/maidian-youxi
+- GitHub Pages：https://tomo-opt.github.io/maidian-youxi/（首次工作流发布完成后生效）
+
+依次体验“导入产品 → AI真实分析 → 确认卖点 → 选择玩法 → 实时生图与生成HTML → 沙箱试玩/下载”。GitHub Pages 会自动连接上方 Vercel 生成服务，不需要评委配置密钥。
 
 ## 一句话定义
 

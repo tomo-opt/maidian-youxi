@@ -1,3 +1,5 @@
+import { getVercelOidcToken } from '@vercel/oidc';
+
 const GATEWAY_URL = 'https://ai-gateway.vercel.sh/v1/chat/completions';
 
 export function corsHeaders(req) {
@@ -30,8 +32,10 @@ export function requirePost(req, res) {
   return false;
 }
 
-export function getGatewayToken() {
-  const token = process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN;
+export async function getGatewayToken() {
+  const token = process.env.AI_GATEWAY_API_KEY
+    || process.env.VERCEL_OIDC_TOKEN
+    || await getVercelOidcToken().catch(() => '');
   if (!token) throw new Error('AI Gateway 尚未配置：Vercel 部署将自动注入 OIDC，本地调试需 AI_GATEWAY_API_KEY。');
   return token;
 }
@@ -41,7 +45,7 @@ export async function callDeepSeek({ messages, maxTokens = 8000, temperature = 0
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${getGatewayToken()}`
+      Authorization: `Bearer ${await getGatewayToken()}`
     },
     body: JSON.stringify({
       model: process.env.TEXT_MODEL || 'deepseek/deepseek-v4.1-flash',
