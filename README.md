@@ -20,7 +20,7 @@
 - GitHub 仓库：https://github.com/tomo-opt/maidian-youxi
 - GitHub Pages：https://tomo-opt.github.io/maidian-youxi/（首次工作流发布完成后生效）
 
-依次体验“导入产品 → AI真实分析 → 确认卖点 → 选择玩法 → 实时生图与生成HTML → 沙箱试玩/下载”。GitHub Pages 会自动连接上方 Vercel 生成服务，不需要评委配置密钥。
+依次体验“导入产品 → AI真实分析 → 确认卖点 → 选择角色化方向 → 参考图角色定妆 → 产品血缘复核 → 同角色动作生成 → 互动HTML → 沙箱试玩/下载”。两个静态入口都会自动连接 Workers AI，不需要评委配置密钥。
 
 ## 一句话定义
 
@@ -38,9 +38,10 @@
 
 - Cloudflare Moondream：实时读取产品图中的可见外观、结构与场景。
 - Cloudflare Llama 策略模型：把视觉观察整理为可信卖点与三套互动创意。
-- Cloudflare FLUX：实时生成原创角色/场景素材。
+- Cloudflare FLUX.2 Klein：以产品原图为参考生成角色定妆，再以“产品＋定妆图”双参考生成同角色动作主视觉；失败时回退到免费 img2img 模型。
+- Moondream 角色复核：比较产品与定妆结果，低于阈值时带着批评意见自动定向重绘一次。
 - Cloudflare Qwen MoE：从本次简报实时编写单文件互动 HTML。
-- 浏览器沙箱：生成的 HTML 禁止联网，在隔离环境中试玩，并可下载为独立文件。
+- 浏览器沙箱：最终 HTML 只装配原创角色与动作素材，不直接粘贴产品原图；禁止联网，可试玩并下载为独立文件。
 - GitHub Pages 与 Vercel 只负责免费静态托管，AI 调用走 Workers AI 每日免费额度；无需信用卡或永久 API Key。
 
 ## 边界
