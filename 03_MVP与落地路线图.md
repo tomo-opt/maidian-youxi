@@ -50,8 +50,9 @@
 ## 5. 从本地原型到公司平台
 
 1. **本地/评审版**：当前静态原型验证四步流程和路演逻辑。
-2. **GitHub Pages MVP**：静态前端公开访问，调用 Vercel Functions；模型访问身份只存在服务端。
-3. **Vercel 生成服务**：以 OIDC 调用 AI Gateway；DeepSeek 负责图片理解与代码，图像模型负责实时素材生成。
+2. **GitHub Pages MVP**：作为比赛提交链接，静态前端公开访问并调用 Cloudflare Worker。
+3. **免费生成服务**：Cloudflare Workers AI 的视觉、策略、FLUX 与代码模型组成实时链路，每日免费额度用尽后停止，不产生超额扣费。
+4. **Vercel 镜像站**：保留同一静态前端作为备用访问入口，不承担付费 AI Gateway 调用。
 4. **公司平台展示版**：比赛后若需要，仅迁移演示成果与代码，不把企业级落地作为本次比赛范围。
 
 当前接口边界为：`analyze`、`generate-image`、`generate-experience`、`health`。比赛重点是实时生成效果，不建设账号、数据库和企业审批。

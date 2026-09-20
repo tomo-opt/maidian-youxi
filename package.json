@@ -8,11 +8,7 @@
   },
   "scripts": {
     "dev": "npx vercel@59.23.2 dev",
-    "check": "node tools/check.mjs"
-  },
-  "dependencies": {
-    "@vercel/oidc": "3.8.8",
-    "ai": "7.0.107",
-    "zod": "^4.1.8"
+    "check": "node tools/check.mjs",
+    "worker:deploy": "npx wrangler@latest deploy"
   }
 }

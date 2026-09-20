@@ -36,11 +36,12 @@
 
 ## 当前技术链路
 
-- DeepSeek V4.1 Flash：读取产品图、提炼卖点、实时发散创意并编写互动 HTML。
-- Vercel AI Gateway 图像模型：实时生成原创角色/场景素材。
-- Vercel Functions：保管模型访问身份，GitHub Pages 不接触任何密钥。
+- Cloudflare Moondream：实时读取产品图中的可见外观、结构与场景。
+- Cloudflare Llama 策略模型：把视觉观察整理为可信卖点与三套互动创意。
+- Cloudflare FLUX：实时生成原创角色/场景素材。
+- Cloudflare Qwen MoE：从本次简报实时编写单文件互动 HTML。
 - 浏览器沙箱：生成的 HTML 禁止联网，在隔离环境中试玩，并可下载为独立文件。
-- Vercel 部署使用自动 OIDC 身份，无需把永久 API Key 写入代码或仓库。
+- GitHub Pages 与 Vercel 只负责免费静态托管，AI 调用走 Workers AI 每日免费额度；无需信用卡或永久 API Key。
 
 ## 边界
 

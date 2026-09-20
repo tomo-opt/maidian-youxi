@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "maidian-youxi-ai",
+  "main": "cloudflare-worker/worker.js",
+  "compatibility_date": "2026-09-20",
+  "ai": {
+    "binding": "AI"
+  },
+  "observability": {
+    "enabled": true
+  }
+}
